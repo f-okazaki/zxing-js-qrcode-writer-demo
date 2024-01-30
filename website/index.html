@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Futoshi Okazaki">
+    <title>QR Code Generator</title>
+    <!-- bootstrap 5.3の最新のCDNを読み込む-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+
+
+</head>
+
+<body class="bg-body-tertiary">
+
+    <div class="container">
+        <main>
+            <div class="py-5 text-center">
+                <h2>車検証　QRコード生成</h2>
+                <p class="lead">普通車の車検証は、２分割と３分割のQRコードです。軽自動車は、分割されていません。</p>
+            </div>
+            <h3>普通車の分割QRコード生成</h3>
+
+            <div class="row g-5">
+                <div class="col-md-12 col-lg-12">
+                    <form class="needs-validation" novalidate="" action="">
+                        <div class="row g-3">
+                            <div class="col-md-2">
+                                <label for="total_page3" class="form-label">分割数</label>
+                                <input type="number" class="form-control text-end" id="total_page3" placeholder=""
+                                    value="3" required="">
+                                <div class="invalid-feedback">
+                                    数字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <label for="qr_text3" class="form-label">車検証QRデータ</label>
+                                <input type="text" class="form-control" id="qr_text3" placeholder=""
+                                    value="2/-  /174900040/240530/1705/DBA-GRS210/0084/-   /-   /0075/10/096/2/0/I/0001/-    /170512/01" required="">
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-2">
+                                <label for="total_page2" class="form-label">分割数</label>
+                                <input type="number" class="form-control text-end" id="total_page2" placeholder=""
+                                    value="2" required="">
+                                <div class="invalid-feedback">
+                                    数字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <label for="qr_text2" class="form-label">車検証QRデータ</label>
+                                <input type="text" class="form-control" id="qr_text2" placeholder=""
+                                    value="2/山口　　３３０ほ８８９９/A/GRS210-6021369/4GR/1" required="">
+                            </div>
+                        </div>
+                        <hr class="my-4">
+
+                        <button class="w-100 btn btn-primary btn-lg" type="button" id="write">QRコード生成</button>
+                    </form>
+                </div>
+            </div>
+
+
+
+                <!-- 分割総数をセットするテキストボックス-->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span id="write-svg3"></span><span class="p-3"></span><span id="write-svg2"></span>
+                    </div>
+                </div>
+
+        </main>
+    </div>
+    <footer class="my-5 pt-5 text-body-secondary text-center text-small">
+        <p class="mb-1">QRコードはデンソーウェーブの登録商標です</p>
+        <ul class="list-inline">
+            <!-- <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li> -->
+        </ul>
+    </footer>
+
+
+    <!-- bootstrap のJSを読み込む-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+
+    <!-- ここからQRコードのライブラリを読み込む-->
+    <script type="text/javascript" src="zxing.js"></script>
+    <script type="text/javascript" src="lib.js"></script>
+
+    <script type="text/javascript">
+
+        window.addEventListener('load', function () {
+
+            // 生成
+            document.getElementById('write').addEventListener('click', function (e) {
+                const writeSvg2 = document.getElementById('write-svg2');
+                const writeSvg3 = document.getElementById('write-svg3');
+                writeSvg2.innerHTML = '';
+                writeSvg3.innerHTML = '';
+
+                const total_page2 = document.getElementById('total_page2').value;
+                const total_page3 = document.getElementById('total_page3').value;
+
+                const writer = new ZXing.BrowserQRCodeSvgWriter();
+                const qr_text2 = document.getElementById('qr_text2').value;
+                const qr_text3 = document.getElementById('qr_text3').value;
+
+                // utf-8文字列を分割する
+                const qr_text2_array = splitUtf8String(qr_text2, total_page2);
+                const qr_text3_array = splitUtf8String(qr_text3, total_page3);
+
+                console.log(qr_text2_array);
+                console.log(qr_text3_array);
+
+
+
+                for (let i = 0; i < total_page2; i++) {
+                    const svg = writer.write_sa(i, total_page2, 2, qr_text2_array[i], 128, 128);
+                    writeSvg2.appendChild(svg);
+                }
+                for (let i = 0; i < total_page3; i++) {
+                    const svg = writer.write_sa(i, total_page3, 3, qr_text3_array[i], 128, 128);
+                    writeSvg3.appendChild(svg);
+                }            
+            });
+        });
+    </script>
+</body>
+
+
+</html>
