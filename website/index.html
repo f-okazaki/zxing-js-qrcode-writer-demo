@@ -22,22 +22,37 @@
 <body class="bg-body-tertiary">
 
     <div class="container">
-        <main>
-            <div class="py-5 text-center">
-                <h2>車検証　QRコード生成</h2>
-                <p class="lead">普通車の車検証は、２分割と３分割のQRコードです。軽自動車は、分割されていません。</p>
-            </div>
-            <form class="needs-validation" novalidate="" action="">
-                <div class="row">
-                    <div class="col-md-12 mb-2">
-                        <strong>普通車の分割QRコード（2）生成</strong>
-                        <button type="button" id="create_type_2" class="btn btn-sm btn-primary">Create</button>
-                    </div>
-                </div>
 
-                <div class="row qr">
-                    <div class="col-md-12 col-lg-12">
+        <main>
+
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a href="#futu" class="nav-link active" role="tab" data-bs-toggle="tab"
+                        aria-selected="true">普通自動車</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#kei" class="nav-link" role="tab" data-bs-toggle="tab" aria-selected="true">軽自動車</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#kei_ic" class="nav-link" role="tab" data-bs-toggle="tab" aria-selected="true">軽自動車IC</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div id="futu" class="tab-pane active" role="tabpanel" aria-labelledby="futu">
+
+                    <div class="py-5 text-center">
+                        <h2>車検証　QRコード生成</h2>
+                        <p class="lead">普通車の車検証は、２分割と３分割のQRコードです。</p>
+                    </div>
+                    <form class="needs-validation" novalidate="" action="">
                         <div class="row">
+                            <div class="col-md-12 mb-2">
+                                <strong>普通車の分割QRコード（2）生成</strong>
+                                <button type="button" id="create_type_2" class="btn btn-sm btn-primary">Create</button>
+                            </div>
+                        </div>
+
+                        <div class="row qr">
                             <div class="col-md-2">
                                 <label for="qr2_1" class="form-label">バージョン番号</label>
                                 <input type="text" class="form-control" id="qr2_1" placeholder="" maxlength="1"
@@ -86,19 +101,16 @@
                                     半角固定１文字を入力してください。
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-12 mb-2 mt-2">
-                        <strong>普通車の分割QRコード（3）生成</strong>
-                        <button type="button" id="create_type_3" class="btn btn-sm btn-primary">Create</button>
-                    </div>
-                </div>
-                <div class="row qr">
-                    <div class="col-md-12 col-lg-12">
+                        </div>
+
                         <div class="row">
+                            <div class="col-md-12 mb-2 mt-2">
+                                <strong>普通車の分割QRコード（3）生成</strong>
+                                <button type="button" id="create_type_3" class="btn btn-sm btn-primary">Create</button>
+                            </div>
+                        </div>
+                        <div class="row qr">
                             <div class="col-md-2">
                                 <label for="qr3_1" class="form-label">バージョン番号</label>
                                 <input type="text" class="form-control" id="qr3_1" placeholder="" maxlength="1"
@@ -252,63 +264,902 @@
                                 </div>
                             </div>
                         </div>
+                        <hr>
+                        <div class="row g-5">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="row g-3">
+                                    <div class="col-md-2">
+                                        <label for="total_page2" class="form-label">分割数</label>
+                                        <input type="number" class="form-control text-end" id="total_page2"
+                                            placeholder="" value="2" required="">
+                                        <div class="invalid-feedback">
+                                            数字を入力してください。
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <label for="qr_text2" class="form-label">車検証QRデータ</label>
+                                        <input type="text" class="form-control" id="qr_text2" placeholder=""
+                                            value="2/山口　　３３０ほ８８９９/A/GRS210-6021369/4GR/1" required="">
+                                    </div>
+                                </div>
+
+                                <div class="row g-3">
+                                    <div class="col-md-2">
+                                        <label for="total_page3" class="form-label">分割数</label>
+                                        <input type="number" class="form-control text-end" id="total_page3"
+                                            placeholder="" value="3" required="">
+                                        <div class="invalid-feedback">
+                                            数字を入力してください。
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <label for="qr_text3" class="form-label">車検証QRデータ</label>
+                                        <input type="text" class="form-control" id="qr_text3" placeholder=""
+                                            value="2/-  /174900040/240530/1705/DBA-GRS210/0084/-   /-   /0075/10/096/2/0/I/0001/-    /170512/01"
+                                            required="">
+                                    </div>
+                                </div>
+                                <hr class="my-4">
+
+                                <button class="w-100 btn btn-primary btn-lg" type="button" id="write">QRコード生成</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- 分割総数をセットするテキストボックス-->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <span id="write-svg2"></span>
+                            <span class="p-3"></span>
+                            <span id="write-svg3"></span>
+                        </div>
                     </div>
                 </div>
-                <hr>
-                <div class="row g-5">
-                    <div class="col-md-12 col-lg-12">
-                        <div class="row g-3">
+                <!-- 軽自動車タブ-->
+                <div id="kei" class="tab-pane" role="tabpanel" aria-labelledby="kei">
+                    <div class="py-5 text-center">
+                        <h2>軽自動車 車検証 QRコード生成</h2>
+                        <p class="lead">軽自動車の車検証は、分割ではありません。通常のQRコードです。</p>
+                    </div>
+                    <form class="needs-validation" novalidate="" action="">
+                        <div class="row">
+                            <div class="col-md-12 mb-2">
+                                <strong>QRコード（１）生成</strong>
+                                <button type="button" id="create_kei_1" class="btn btn-sm btn-primary">Create</button>
+                            </div>
+                        </div>
+                        <div class="row qr">
                             <div class="col-md-2">
-                                <label for="total_page2" class="form-label">分割数</label>
-                                <input type="number" class="form-control text-end" id="total_page2" placeholder=""
-                                    value="2" required="">
+                                <label for="kei_1_1" class="form-label">システムID</label>
+                                <input type="text" class="form-control" id="kei_1_1" placeholder="" maxlength="1"
+                                    value="K">
                                 <div class="invalid-feedback">
-                                    数字を入力してください。
+                                    半角固定１文字を入力してください。
                                 </div>
                             </div>
-                            <div class="col-md-10">
-                                <label for="qr_text2" class="form-label">車検証QRデータ</label>
-                                <input type="text" class="form-control" id="qr_text2" placeholder=""
-                                    value="2/山口　　３３０ほ８８９９/A/GRS210-6021369/4GR/1" required="">
+                            <div class="col-md-2">
+                                <label for="kei_1_2" class="form-label">バージョン番号</label>
+                                <input type="text" class="form-control" id="kei_1_2" placeholder="" maxlength="2"
+                                    value="02">
+                                <div class="invalid-feedback">
+                                    半角固定２文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_1_3" class="form-label">輸出整理番号</label>
+                                <input type="text" class="form-control" id="kei_1_3" placeholder="" maxlength="16"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定16文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_1_4" class="form-label">車両番号</label>
+                                <input type="text" class="form-control" id="kei_1_4" placeholder="" maxlength="12"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    全角固定１２文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_1_5" class="form-label">車台番号</label>
+                                <input type="text" class="form-control" id="kei_1_5" placeholder="" maxlength="20"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角可変２０文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_1_6" class="form-label">型式指定番号・類別区分番号</label>
+                                <input type="text" class="form-control" id="kei_1_6" placeholder="" maxlength="9"
+                                    value="1">
+                                <div class="invalid-feedback">
+                                    半角固定9文字を入力してください。
+                                </div>
                             </div>
                         </div>
 
-                        <div class="row g-3">
-                            <div class="col-md-2">
-                                <label for="total_page3" class="form-label">分割数</label>
-                                <input type="number" class="form-control text-end" id="total_page3" placeholder=""
-                                    value="3" required="">
-                                <div class="invalid-feedback">
-                                    数字を入力してください。
-                                </div>
-                            </div>
-                            <div class="col-md-10">
-                                <label for="qr_text3" class="form-label">車検証QRデータ</label>
-                                <input type="text" class="form-control" id="qr_text3" placeholder=""
-                                    value="2/-  /174900040/240530/1705/DBA-GRS210/0084/-   /-   /0075/10/096/2/0/I/0001/-    /170512/01"
-                                    required="">
+                        <div class="row">
+                            <div class="col-md-12 mb-2 mt-2">
+                                <strong>QRコード（2）生成</strong>
+                                <button type="button" id="create_kei_2" class="btn btn-sm btn-primary">Create</button>
                             </div>
                         </div>
-                        <hr class="my-4">
+                        <div class="row qr">
+                            <div class="col-md-2">
+                                <label for="kei_2_1" class="form-label">システムID</label>
+                                <input type="text" class="form-control" id="kei_2_1" placeholder="" maxlength="1"
+                                    value="K">
+                                <div class="invalid-feedback">
+                                    半角固定１文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_2_2" class="form-label">バージョン番号</label>
+                                <input type="text" class="form-control" id="kei_2_2" placeholder="" maxlength="2"
+                                    value="22">
+                                <div class="invalid-feedback">
+                                    半角固定2文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_2_3" class="form-label">車両番号</label>
+                                <input type="text" class="form-control" id="kei_2_3" placeholder="" maxlength="12"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    全角固定12文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_2_4" class="form-label">標板の枚数・大きさ</label>
+                                <input type="text" class="form-control" id="kei_2_4" placeholder="" maxlength="1"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定1文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_2_5" class="form-label">車台番号</label>
+                                <input type="text" class="form-control" id="kei_2_5" placeholder="" maxlength="20"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角可変20文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_2_6" class="form-label">原動機型式</label>
+                                <input type="text" class="form-control" id="kei_2_6" placeholder="" maxlength="17"
+                                    value="DBA-GRS210">
+                                <div class="invalid-feedback">
+                                    半角可変24文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_2_7" class="form-label">帳票種別</label>
+                                <input type="text" class="form-control" id="kei_2_7" placeholder="" maxlength="1"
+                                    value="0084">
+                                <div class="invalid-feedback">
+                                    半角固定1文字を入力してください。
+                                </div>
+                            </div>
+                        </div>
 
-                        <button class="w-100 btn btn-primary btn-lg" type="button" id="write">QRコード生成</button>
+                        <div class="row">
+                            <div class="col-md-12 mb-2 mt-2">
+                                <strong>QRコード（3）生成</strong>
+                                <button type="button" id="create_kei_3" class="btn btn-sm btn-primary">Create</button>
+                            </div>
+                        </div>
+                        <div class="row qr">
+                            <div class="col-md-2">
+                                <label for="kei_3_1" class="form-label">システムID</label>
+                                <input type="text" class="form-control" id="kei_3_1" placeholder="" maxlength="1"
+                                    value="K">
+                                <div class="invalid-feedback">
+                                    半角固定１文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_3_2" class="form-label">バージョン番号</label>
+                                <input type="text" class="form-control" id="kei_3_2" placeholder="" maxlength="2"
+                                    value="32">
+                                <div class="invalid-feedback">
+                                    半角固定2文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_3_3" class="form-label">車台番号・打刻位置</label>
+                                <input type="text" class="form-control" id="kei_3_3" placeholder="" maxlength="3"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定3文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_3_4" class="form-label">型式指定番号・類別区分番号</label>
+                                <input type="text" class="form-control" id="kei_3_4" placeholder="" maxlength="9"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角可変9文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_3_5" class="form-label">有効期間・満了日</label>
+                                <input type="text" class="form-control" id="kei_3_5" placeholder="" maxlength="6"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定6文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_3_6" class="form-label">初度検査年月</label>
+                                <input type="text" class="form-control" id="kei_3_6" placeholder="" maxlength="4"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定4文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_3_7" class="form-label">形式</label>
+                                <input type="text" class="form-control" id="kei_3_7" placeholder="" maxlength="20"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角可変20文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+
+                                <label for="kei_3_8" class="form-label">軸重（前前）</label>
+                                <input type="text" class="form-control" id="kei_3_8" placeholder="" maxlength="4"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定4文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_3_9" class="form-label">軸重（前後）</label>
+                                <input type="text" class="form-control" id="kei_3_9" placeholder="" maxlength="1"
+                                    value="-">
+                                <div class="invalid-feedback">
+                                    半角固定1文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_3_10" class="form-label">軸重（後前）</label>
+                                <input type="text" class="form-control" id="kei_3_10" placeholder="" maxlength="1"
+                                    value="-">
+                                <div class="invalid-feedback">
+                                    半角固定1文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_3_11" class="form-label">軸重（後後）</label>
+                                <input type="text" class="form-control" id="kei_3_11" placeholder="" maxlength="4"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定4文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_3_12" class="form-label">騒音規制</label>
+                                <input type="text" class="form-control" id="kei_3_12" placeholder="" maxlength="2"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定2文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_3_13" class="form-label">近接排気騒音規制値</label>
+                                <input type="text" class="form-control" id="kei_3_13" placeholder="" maxlength="3"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定3文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_3_14" class="form-label">駆動方式</label>
+                                <input type="text" class="form-control" id="kei_3_14" placeholder="" maxlength="1"
+                                    value="-">
+                                <div class="invalid-feedback">
+                                    半角固定1文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_3_15" class="form-label">オパシメータ測定車</label>
+                                <input type="text" class="form-control" id="kei_3_15" placeholder="" maxlength="1"
+                                    value="-">
+                                <div class="invalid-feedback">
+                                    半角固定1文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_3_16" class="form-label">NOx・PM測定モード</label>
+                                <input type="text" class="form-control" id="kei_3_16" placeholder="" maxlength="1"
+                                    value="-">
+                                <div class="invalid-feedback">
+                                    半角固定1文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_3_17" class="form-label">NOx値</label>
+                                <input type="text" class="form-control" id="kei_3_17" placeholder="" maxlength="4"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定4文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_3_18" class="form-label">PM値</label>
+                                <input type="text" class="form-control" id="kei_3_18" placeholder="" maxlength="5"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定5文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_3_19" class="form-label">燃料の種類コード</label>
+                                <input type="text" class="form-control" id="kei_3_19" placeholder="" maxlength="2"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定2文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_3_20" class="form-label">予備項目</label>
+                                <input type="text" class="form-control" id="kei_3_20" placeholder="" maxlength="3"
+                                    value="999">
+                                <div class="invalid-feedback">
+                                    半角固定3文字を入力してください。
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mb-2 mt-2">
+                                <strong>QRコード（4）生成</strong>
+                                <button type="button" id="create_kei_4" class="btn btn-sm btn-primary">Create</button>
+                            </div>
+                        </div>
+                        <div class="row qr">
+
+                            <div class="col-md-2">
+                                <label for="kei_4_1" class="form-label">システムID</label>
+                                <input type="text" class="form-control" id="kei_4_1" placeholder="" maxlength="1"
+                                    value="K">
+                                <div class="invalid-feedback">
+                                    半角固定１文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_4_2" class="form-label">バージョン番号</label>
+                                <input type="text" class="form-control" id="kei_4_2" placeholder="" maxlength="2"
+                                    value="51">
+                                <div class="invalid-feedback">
+                                    半角固定2文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_4_3" class="form-label">使用者氏名</label>
+                                <input type="text" class="form-control" id="kei_4_3" placeholder="" maxlength="35"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    全角固定35文字を入力してください。
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mb-2 mt-2">
+                                <strong>QRコード（5）生成</strong>
+                                <button type="button" id="create_kei_5" class="btn btn-sm btn-primary">Create</button>
+                            </div>
+                        </div>
+                        <div class="row qr">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label for="kei_5_1" class="form-label">システムID</label>
+                                        <input type="text" class="form-control" id="kei_5_1" placeholder=""
+                                            maxlength="1" value="K">
+                                        <div class="invalid-feedback">
+                                            半角固定１文字を入力してください。
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label for="kei_5_2" class="form-label">バージョン番号</label>
+                                        <input type="text" class="form-control" id="kei_5_2" placeholder=""
+                                            maxlength="2" value="61">
+                                        <div class="invalid-feedback">
+                                            半角固定2文字を入力してください。
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label for="kei_5_3" class="form-label">使用者住所</label>
+                                        <input type="text" class="form-control" id="kei_5_3" placeholder=""
+                                            maxlength="35" value="">
+                                        <div class="invalid-feedback">
+                                            全角固定35文字を入力してください。
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 mb-2 mt-2">
+                                <strong>QRコード（6）生成</strong>
+                                <button type="button" id="create_kei_6" class="btn btn-sm btn-primary">Create</button>
+                            </div>
+                        </div>
+                        <div class="row qr">
+
+                            <div class="col-md-2">
+                                <label for="kei_6_1" class="form-label">システムID</label>
+                                <input type="text" class="form-control" id="kei_6_1" placeholder="" maxlength="1"
+                                    value="K">
+                                <div class="invalid-feedback">
+                                    半角固定１文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_6_2" class="form-label">バージョン番号</label>
+                                <input type="text" class="form-control" id="kei_6_2" placeholder="" maxlength="2"
+                                    value="71">
+                                <div class="invalid-feedback">
+                                    半角固定2文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_6_3" class="form-label">自動車の種別</label>
+                                <input type="text" class="form-control" id="kei_6_3" placeholder="" maxlength="4"
+                                    value="軽自動車">
+                                <div class="invalid-feedback">
+                                    全角4文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_6_4" class="form-label">用途</label>
+                                <input type="text" class="form-control" id="kei_6_4" placeholder="" maxlength="2"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    全角2文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_6_5" class="form-label">自家用・事業用の別</label>
+                                <input type="text" class="form-control" id="kei_6_5" placeholder="" maxlength="5"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    全角5文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_6_6" class="form-label">車体の形状</label>
+                                <input type="text" class="form-control" id="kei_6_6" placeholder="" maxlength="3"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角3文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_6_7" class="form-label">乗車定員１</label>
+                                <input type="text" class="form-control" id="kei_6_7" placeholder="" maxlength="1"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角1文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_6_8" class="form-label">乗車定員２</label>
+                                <input type="text" class="form-control" id="kei_6_8" placeholder="" maxlength="1"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角1文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_6_9" class="form-label">最大積載量１</label>
+                                <input type="text" class="form-control" id="kei_6_9" placeholder="" maxlength="3"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角3文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_6_10" class="form-label">最大積載量２</label>
+                                <input type="text" class="form-control" id="kei_6_10" placeholder="" maxlength="3"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角3文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_6_11" class="form-label">車両総重量１</label>
+                                <input type="text" class="form-control" id="kei_6_11" placeholder="" maxlength="4"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角4文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_6_12" class="form-label">車両総重量２</label>
+                                <input type="text" class="form-control" id="kei_6_12" placeholder="" maxlength="4"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角4文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_6_13" class="form-label">車名</label>
+                                <input type="text" class="form-control" id="kei_6_13" placeholder="" maxlength="4"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角3文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_6_14" class="form-label">走行距離計・表示値</label>
+                                <input type="text" class="form-control" id="kei_6_14" placeholder="" maxlength="6"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角6文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_6_15" class="form-label">走行距離計・区分</label>
+                                <input type="text" class="form-control" id="kei_6_15" placeholder="" maxlength="2"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角2文字を入力してください。
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <hr>
+                        <div class="row g-5">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="row g-3">
+                                    <div class="col-md-12">
+                                        <label for="kei_text1" class="form-label">車検証QRデータ</label>
+                                        <input type="text" class="form-control" id="kei_text1" placeholder=""
+                                            value="K/71/軽自動車/貨物/自家用/021/2/4/350/250/1320/1330/131/87000/km" required="">
+                                    </div>
+                                </div>
+
+                                <div class="row g-3">
+                                    <div class="col-md-12">
+                                        <label for="kei_text2" class="form-label">車検証QRデータ</label>
+                                        <input type="text" class="form-control" id="kei_text2" placeholder="" value=""
+                                            required="">
+                                    </div>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-12">
+                                        <label for="kei_text3" class="form-label">車検証QRデータ</label>
+                                        <input type="text" class="form-control" id="kei_text3" placeholder="" value=""
+                                            required="">
+                                    </div>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-12">
+                                        <label for="kei_text4" class="form-label">車検証QRデータ</label>
+                                        <input type="text" class="form-control" id="kei_text4" placeholder="" value=""
+                                            required="">
+                                    </div>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-12">
+                                        <label for="kei_text5" class="form-label">車検証QRデータ</label>
+                                        <input type="text" class="form-control" id="kei_text5" placeholder="" value=""
+                                            required="">
+                                    </div>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-12">
+                                        <label for="kei_text6" class="form-label">車検証QRデータ</label>
+                                        <input type="text" class="form-control" id="kei_text6" placeholder="" value=""
+                                            required="">
+                                    </div>
+                                </div>
+                                <hr class="my-4">
+
+                                <button class="w-100 btn btn-primary btn-lg" type="button"
+                                    id="write_kei">QRコード生成</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- 分割総数をセットするテキストボックス-->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <span id="write-svg-kei"></span>
+                        </div>
                     </div>
                 </div>
-            </form>
+                <!-- 軽自動車IC TAB-->
+                <div id="kei_ic" class="tab-pane" role="tabpanel" aria-labelledby="kei_ic">
+                    <div class="py-5 text-center">
+                        <h2>軽自動車IC 車検証 QRコード生成</h2>
+                        <p class="lead">軽自動車の車検証は、分割ではありません。通常のQRコードです。</p>
+                    </div>
+                    <form class="needs-validation" novalidate="" action="">
+                        <div class="row">
+                            <div class="col-md-12 mb-2">
+                                <strong>QRコード（2）生成</strong>
+                                <button type="button" id="create_kei_ic_2"
+                                    class="btn btn-sm btn-primary">Create</button>
+                            </div>
+                        </div>
+                        <div class="row qr">
+                            <div class="col-md-2">
+                                <label for="kei_ic_2_1" class="form-label">システムID</label>
+                                <input type="text" class="form-control" id="kei_ic_2_1" placeholder="" maxlength="1"
+                                    value="K">
+                                <div class="invalid-feedback">
+                                    半角固定１文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_2_2" class="form-label">バージョン番号</label>
+                                <input type="text" class="form-control" id="kei_ic_2_2" placeholder="" maxlength="2"
+                                    value="22">
+                                <div class="invalid-feedback">
+                                    半角固定2文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_2_3" class="form-label">車両番号</label>
+                                <input type="text" class="form-control" id="kei_ic_2_3" placeholder="" maxlength="12"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    全角固定12文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_2_4" class="form-label">標板の枚数・大きさ</label>
+                                <input type="text" class="form-control" id="kei_ic_2_4" placeholder="" maxlength="1"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定1文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_2_5" class="form-label">車台番号</label>
+                                <input type="text" class="form-control" id="kei_ic_2_5" placeholder="" maxlength="20"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角可変20文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_2_6" class="form-label">原動機型式</label>
+                                <input type="text" class="form-control" id="kei_ic_2_6" placeholder="" maxlength="17"
+                                    value="DBA-GRS210">
+                                <div class="invalid-feedback">
+                                    半角可変24文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_2_7" class="form-label">帳票種別</label>
+                                <input type="text" class="form-control" id="kei_ic_2_7" placeholder="" maxlength="1"
+                                    value="0084">
+                                <div class="invalid-feedback">
+                                    半角固定1文字を入力してください。
+                                </div>
+                            </div>
+                        </div>
 
-            <!-- 分割総数をセットするテキストボックス-->
-            <div class="row">
-                <div class="col-sm-12">
-                    <span id="write-svg3"></span><span class="p-3"></span><span id="write-svg2"></span>
+                        <div class="row">
+                            <div class="col-md-12 mb-2 mt-2">
+                                <strong>QRコード（3）生成</strong>
+                                <button type="button" id="create_kei_ic_3"
+                                    class="btn btn-sm btn-primary">Create</button>
+                            </div>
+                        </div>
+                        <div class="row qr">
+                            <div class="col-md-2">
+                                <label for="kei_ic_3_1" class="form-label">システムID</label>
+                                <input type="text" class="form-control" id="kei_ic_3_1" placeholder="" maxlength="1"
+                                    value="K">
+                                <div class="invalid-feedback">
+                                    半角固定１文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_3_2" class="form-label">バージョン番号</label>
+                                <input type="text" class="form-control" id="kei_ic_3_2" placeholder="" maxlength="2"
+                                    value="32">
+                                <div class="invalid-feedback">
+                                    半角固定2文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_3_3" class="form-label">車台番号・打刻位置</label>
+                                <input type="text" class="form-control" id="kei_ic_3_3" placeholder="" maxlength="3"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定3文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_3_4" class="form-label">型式指定番号・類別区分番号</label>
+                                <input type="text" class="form-control" id="kei_ic_3_4" placeholder="" maxlength="9"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角可変9文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_3_5" class="form-label">有効期間・満了日</label>
+                                <input type="text" class="form-control" id="kei_ic_3_5" placeholder="" maxlength="6"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定6文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_3_6" class="form-label">初度検査年月</label>
+                                <input type="text" class="form-control" id="kei_ic_3_6" placeholder="" maxlength="4"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定4文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_3_7" class="form-label">形式</label>
+                                <input type="text" class="form-control" id="kei_ic_3_7" placeholder="" maxlength="20"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角可変20文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_3_8" class="form-label">軸重（前前）</label>
+                                <input type="text" class="form-control" id="kei_ic_3_8" placeholder="" maxlength="4"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定4文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_3_9" class="form-label">軸重（前後）</label>
+                                <input type="text" class="form-control" id="kei_ic_3_9" placeholder="" maxlength="1"
+                                    value="-">
+                                <div class="invalid-feedback">
+                                    半角固定1文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_3_10" class="form-label">軸重（後前）</label>
+                                <input type="text" class="form-control" id="kei_ic_3_10" placeholder="" maxlength="1"
+                                    value="-">
+                                <div class="invalid-feedback">
+                                    半角固定1文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_3_11" class="form-label">軸重（後後）</label>
+                                <input type="text" class="form-control" id="kei_ic_3_11" placeholder="" maxlength="4"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定4文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_3_12" class="form-label">騒音規制</label>
+                                <input type="text" class="form-control" id="kei_ic_3_12" placeholder="" maxlength="2"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定2文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_3_13" class="form-label">近接排気騒音規制値</label>
+                                <input type="text" class="form-control" id="kei_ic_3_13" placeholder="" maxlength="3"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定3文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_3_14" class="form-label">駆動方式</label>
+                                <input type="text" class="form-control" id="kei_ic_3_14" placeholder="" maxlength="1"
+                                    value="-">
+                                <div class="invalid-feedback">
+                                    半角固定1文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_3_15" class="form-label">オパシメータ測定車</label>
+                                <input type="text" class="form-control" id="kei_ic_3_15" placeholder="" maxlength="1"
+                                    value="-">
+                                <div class="invalid-feedback">
+                                    半角固定1文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_3_16" class="form-label">NOx・PM測定モード</label>
+                                <input type="text" class="form-control" id="kei_ic_3_16" placeholder="" maxlength="1"
+                                    value="-">
+                                <div class="invalid-feedback">
+                                    半角固定1文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_3_17" class="form-label">NOx値</label>
+                                <input type="text" class="form-control" id="kei_ic_3_17" placeholder="" maxlength="4"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定4文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_3_18" class="form-label">PM値</label>
+                                <input type="text" class="form-control" id="kei_ic_3_18" placeholder="" maxlength="5"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定5文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_3_19" class="form-label">燃料の種類コード</label>
+                                <input type="text" class="form-control" id="kei_ic_3_19" placeholder="" maxlength="2"
+                                    value="">
+                                <div class="invalid-feedback">
+                                    半角固定2文字を入力してください。
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="kei_ic_3_20" class="form-label">予備項目</label>
+                                <input type="text" class="form-control" id="kei_ic_3_20" placeholder="" maxlength="3"
+                                    value="999">
+                                <div class="invalid-feedback">
+                                    半角固定3文字を入力してください。
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row g-5">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="row g-3">
+                                    <div class="col-md-12">
+                                        <label for="kei_ic_text2" class="form-label">車検証QRデータ</label>
+                                        <input type="text" class="form-control" id="kei_ic_text2" placeholder=""
+                                            value="" required="">
+                                    </div>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-12">
+                                        <label for="kei_ic_text3" class="form-label">車検証QRデータ</label>
+                                        <input type="text" class="form-control" id="kei_ic_text3" placeholder=""
+                                            value="" required="">
+                                    </div>
+                                </div>
+                                <hr class="my-4">
+
+                                <button class="w-100 btn btn-primary btn-lg" type="button"
+                                    id="write_kei_ic">QRコード生成</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
+                <!-- 分割総数をセットするテキストボックス-->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span id="write-svg-kei-ic"></span>
+                    </div>
+                </div>
+
             </div>
+
+
+
         </main>
     </div>
 
 
 
 
-    </div>
     <footer class="my-5 pt-5 text-body-secondary text-center text-small">
         <p class="mb-1">QRコードはデンソーウェーブの登録商標です</p>
         <ul class="list-inline">
@@ -378,6 +1229,115 @@
             });
 
 
+            document.getElementById('create_kei_1').addEventListener('click', function (e) {
+                const kei_text1 = document.getElementById('kei_text1');
+                const kei_1_1 = document.getElementById('kei_1_1');
+                const kei_1_2 = document.getElementById('kei_1_2');
+                const kei_1_3 = document.getElementById('kei_1_3');
+                const kei_1_4 = document.getElementById('kei_1_4');
+                const kei_1_5 = document.getElementById('kei_1_5');
+                const kei_1_6 = document.getElementById('kei_1_6');
+                kei_text1.value = kei_1_1.value + '/' + kei_1_2.value + '/' + kei_1_3.value + '/' + kei_1_4.value + '/' + kei_1_5.value + '/' + kei_1_6.value;
+
+            });
+
+            document.getElementById('create_kei_2').addEventListener('click', function (e) {
+                const kei_text2 = document.getElementById('kei_text2');
+                const kei_2_1 = document.getElementById('kei_2_1');
+                const kei_2_2 = document.getElementById('kei_2_2');
+                const kei_2_3 = document.getElementById('kei_2_3');
+                const kei_2_4 = document.getElementById('kei_2_4');
+                const kei_2_5 = document.getElementById('kei_2_5');
+                const kei_2_6 = document.getElementById('kei_2_6');
+                const kei_2_7 = document.getElementById('kei_2_7');
+                kei_text2.value = kei_2_1.value + '/' + kei_2_2.value + '/' + kei_2_3.value + '/' + kei_2_4.value + '/' + kei_2_5.value + '/' + kei_2_6.value + '/' + kei_2_7.value;
+            });
+
+            document.getElementById('create_kei_3').addEventListener('click', function (e) {
+                const kei_text3 = document.getElementById('kei_text3');
+                const kei_3_1 = document.getElementById('kei_3_1');
+                const kei_3_2 = document.getElementById('kei_3_2');
+                const kei_3_3 = document.getElementById('kei_3_3');
+                const kei_3_4 = document.getElementById('kei_3_4');
+                const kei_3_5 = document.getElementById('kei_3_5');
+                const kei_3_6 = document.getElementById('kei_3_6');
+                const kei_3_7 = document.getElementById('kei_3_7');
+                const kei_3_8 = document.getElementById('kei_3_8');
+                const kei_3_9 = document.getElementById('kei_3_9');
+                const kei_3_10 = document.getElementById('kei_3_10');
+                const kei_3_11 = document.getElementById('kei_3_11');
+                const kei_3_12 = document.getElementById('kei_3_12');
+                const kei_3_13 = document.getElementById('kei_3_13');
+                const kei_3_14 = document.getElementById('kei_3_14');
+                const kei_3_15 = document.getElementById('kei_3_15');
+                const kei_3_16 = document.getElementById('kei_3_16');
+                const kei_3_17 = document.getElementById('kei_3_17');
+                const kei_3_18 = document.getElementById('kei_3_18');
+                const kei_3_19 = document.getElementById('kei_3_19');
+                const kei_3_20 = document.getElementById('kei_3_20');
+                kei_text3.value = kei_3_1.value + '/' + kei_3_2.value + '/' + kei_3_3.value + '/' + kei_3_4.value + '/' + kei_3_5.value + '/' + kei_3_6.value + '/' + kei_3_7.value + '/' + kei_3_8.value + '/' + kei_3_9.value + '/' + kei_3_10.value + '/' + kei_3_11.value + '/' + kei_3_12.value + '/' + kei_3_13.value + '/' + kei_3_14.value + '/' + kei_3_15.value + '/' + kei_3_16.value + '/' + kei_3_17.value + '/' + kei_3_18.value + '/' + kei_3_19.value + '/' + kei_3_20.value;
+            });
+
+            document.getElementById('create_kei_4').addEventListener('click', function (e) {
+                const kei_text4 = document.getElementById('kei_text4');
+                const kei_4_1 = document.getElementById('kei_4_1');
+                const kei_4_2 = document.getElementById('kei_4_2');
+                const kei_4_3 = document.getElementById('kei_4_3');
+                kei_text4.value = kei_4_1.value + '/' + kei_4_2.value + '/' + kei_4_3.value;
+            });
+            document.getElementById('create_kei_5').addEventListener('click', function (e) {
+                const kei_text5 = document.getElementById('kei_text5');
+                const kei_5_1 = document.getElementById('kei_5_1');
+                const kei_5_2 = document.getElementById('kei_5_2');
+                const kei_5_3 = document.getElementById('kei_5_3');
+                kei_text5.value = kei_5_1.value + '/' + kei_5_2.value + '/' + kei_5_3.value;
+            });
+            document.getElementById('create_kei_6').addEventListener('click', function (e) {
+                const kei_text6 = document.getElementById('kei_text6');
+                const kei_6_1 = document.getElementById('kei_6_1');
+                const kei_6_2 = document.getElementById('kei_6_2');
+                const kei_6_3 = document.getElementById('kei_6_3');
+                const kei_6_4 = document.getElementById('kei_6_4');
+                const kei_6_5 = document.getElementById('kei_6_5');
+                const kei_6_6 = document.getElementById('kei_6_6');
+                const kei_6_7 = document.getElementById('kei_6_7');
+                const kei_6_8 = document.getElementById('kei_6_8');
+                const kei_6_9 = document.getElementById('kei_6_9');
+                const kei_6_10 = document.getElementById('kei_6_10');
+                const kei_6_11 = document.getElementById('kei_6_11');
+                const kei_6_12 = document.getElementById('kei_6_12');
+                const kei_6_13 = document.getElementById('kei_6_13');
+                const kei_6_14 = document.getElementById('kei_6_14');
+                const kei_6_15 = document.getElementById('kei_6_15');
+                kei_text6.value = kei_6_1.value + '/' + kei_6_2.value + '/' + kei_6_3.value + '/' + kei_6_4.value + '/' + kei_6_5.value + '/' + kei_6_6.value + '/' + kei_6_7.value + '/' + kei_6_8.value + '/' + kei_6_9.value + '/' + kei_6_10.value + '/' + kei_6_11.value + '/' + kei_6_12.value + '/' + kei_6_13.value + '/' + kei_6_14.value + '/' + kei_6_15.value;
+            });
+
+
+            document.getElementById('create_kei_ic_2').addEventListener('click', function (e) {
+                const kei_ic_text2 = document.getElementById('kei_ic_text2');
+                const kei_ic_2_1 = document.getElementById('kei_ic_2_1');
+                const kei_ic_2_2 = document.getElementById('kei_ic_2_2');
+                const kei_ic_2_3 = document.getElementById('kei_ic_2_3');
+                const kei_ic_2_4 = document.getElementById('kei_ic_2_4');
+                const kei_ic_2_5 = document.getElementById('kei_ic_2_5');
+                const kei_ic_2_6 = document.getElementById('kei_ic_2_6');
+                const kei_ic_2_7 = document.getElementById('kei_ic_2_7');
+                kei_ic_text2.value = kei_ic_2_1.value + '/' + kei_ic_2_2.value + '/' + kei_ic_2_3.value + '/' + kei_ic_2_4.value + '/' + kei_ic_2_5.value + '/' + kei_ic_2_6.value + '/' + kei_ic_2_7.value;
+            });
+            document.getElementById('create_kei_ic_3').addEventListener('click', function (e) {
+                const kei_ic_text3 = document.getElementById('kei_ic_text3');
+                const kei_ic_3_1 = document.getElementById('kei_ic_3_1');
+                const kei_ic_3_2 = document.getElementById('kei_ic_3_2');
+                const kei_ic_3_3 = document.getElementById('kei_ic_3_3');
+                const kei_ic_3_4 = document.getElementById('kei_ic_3_4');
+                const kei_ic_3_5 = document.getElementById('kei_ic_3_5');
+                const kei_ic_3_6 = document.getElementById('kei_ic_3_6');
+                const kei_ic_3_7 = document.getElementById('kei_ic_3_7');
+                const kei_ic_3_8 = document.getElementById('kei_ic_3_8');
+                const kei_ic_3_9 = document.getElementById('kei_ic_3_9');
+                kei_ic_text3.value = kei_ic_3_1.value + '/' + kei_ic_3_2.value + '/' + kei_ic_3_3.value + '/' + kei_ic_3_4.value + '/' + kei_ic_3_5.value + '/' + kei_ic_3_6.value + '/' + kei_ic_3_7.value + '/' + kei_ic_3_8.value + '/' + kei_ic_3_9.value;
+            });
+
 
 
             // 生成
@@ -405,7 +1365,7 @@
                 hints.set(ZXing.EncodeHintType.ERROR_CORRECTION, "M");
                 // QRコードのバージョンの設定
                 hints.set(ZXing.EncodeHintType.QR_VERSION, 3);
-                
+
                 for (let i = 0; i < total_page2; i++) {
                     const svg = writer.write_sa(i, total_page2, 2, qr_text2_array[i], 128, 128, hints);
                     writeSvg2.appendChild(svg);
@@ -414,7 +1374,61 @@
                     const svg = writer.write_sa(i, total_page3, 3, qr_text3_array[i], 128, 128, hints);
                     writeSvg3.appendChild(svg);
                 }
+
             });
+
+            // write_kei 生成
+            document.getElementById('write_kei').addEventListener('click', function (e) {
+                const writeSvg = document.getElementById('write-svg-kei');
+
+                writeSvg.innerHTML = '';
+
+                const writer = new ZXing.BrowserQRCodeSvgWriter();
+
+                // kei_text1からkei_text6までをkei_text_arrayに格納する
+                const kei_text_array = [];
+                for (let i = 1; i <= 6; i++) {
+                    const kei_text = document.getElementById('kei_text' + i).value;
+                    kei_text_array.push(kei_text);
+                }
+                const hints = new Map();
+                // QRコードのエラー訂正レベルの設定
+                hints.set(ZXing.EncodeHintType.ERROR_CORRECTION, "M");
+                // QRコードのバージョンの設定
+                hints.set(ZXing.EncodeHintType.QR_VERSION, 3);
+
+                for (let i = 0; i < 6; i++) {
+                    const svg = writer.write(kei_text_array[i], 128, 128, hints);
+                    writeSvg.appendChild(svg);
+                }
+            });
+
+            // write_kei_ic 生成
+            document.getElementById('write_kei_ic').addEventListener('click', function (e) {
+                const writeSvg = document.getElementById('write-svg-kei-ic');
+
+                writeSvg.innerHTML = '';
+
+                const writer = new ZXing.BrowserQRCodeSvgWriter();
+
+                // kei_ic_text2からkei_ic_text3までをkei_ic_text_arrayに格納する
+                const kei_ic_text_array = [];
+                for (let i = 2; i <= 3; i++) {
+                    const kei_ic_text = document.getElementById('kei_ic_text' + i).value;
+                    kei_ic_text_array.push(kei_ic_text);
+                }
+                const hints = new Map();
+                // QRコードのエラー訂正レベルの設定
+                hints.set(ZXing.EncodeHintType.ERROR_CORRECTION, "M");
+                // QRコードのバージョンの設定
+                hints.set(ZXing.EncodeHintType.QR_VERSION, 3);
+
+                for (let i = 0; i < 2; i++) {
+                    const svg = writer.write(kei_ic_text_array[i], 128, 128, hints);
+                    writeSvg.appendChild(svg);
+                }
+            });
+
         });
     </script>
 </body>
