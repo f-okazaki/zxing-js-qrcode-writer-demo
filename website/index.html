@@ -398,17 +398,20 @@
                 const qr_text2_array = splitUtf8String(qr_text2, total_page2);
                 const qr_text3_array = splitUtf8String(qr_text3, total_page3);
 
-                console.log(qr_text2_array);
-                console.log(qr_text3_array);
-
-
-
+                const hints = new Map();
+                // MARGINの設定
+                //hints.set(ZXing.EncodeHintType.MARGIN, 3);
+                // QRコードのエラー訂正レベルの設定
+                hints.set(ZXing.EncodeHintType.ERROR_CORRECTION, "M");
+                // QRコードのバージョンの設定
+                hints.set(ZXing.EncodeHintType.QR_VERSION, 3);
+                
                 for (let i = 0; i < total_page2; i++) {
-                    const svg = writer.write_sa(i, total_page2, 2, qr_text2_array[i], 128, 128);
+                    const svg = writer.write_sa(i, total_page2, 2, qr_text2_array[i], 128, 128, hints);
                     writeSvg2.appendChild(svg);
                 }
                 for (let i = 0; i < total_page3; i++) {
-                    const svg = writer.write_sa(i, total_page3, 3, qr_text3_array[i], 128, 128);
+                    const svg = writer.write_sa(i, total_page3, 3, qr_text3_array[i], 128, 128, hints);
                     writeSvg3.appendChild(svg);
                 }
             });

@@ -22610,7 +22610,16 @@
             return qrCode;
         }
 
-        
+        /**
+         * 
+         * @param {*} page 
+         * @param {*} total_page 
+         * @param {*} parity 
+         * @param {*} content 
+         * @param {*} ecLevel 
+         * @param {*} hints 
+         * @returns 
+         */
         static encode_sa(page, total_page, parity, content, ecLevel, hints = null) {
             // Determine what character encoding has been specified by the caller, if any
             let encoding = Encoder.DEFAULT_BYTE_MODE_ENCODING;
@@ -22727,6 +22736,7 @@
                 // Choose Kanji mode if all input are double-byte characters
                 return Mode$1.KANJI;
             }
+            //return Mode$1.BYTE;
             let hasNumeric = false;
             let hasAlphanumeric = false;
             for (let i = 0, length = content.length; i < length; ++i) {
@@ -23180,6 +23190,7 @@
             }
 
             const code = Encoder.encode_sa(page, total_page, parity, contents, errorCorrectionLevel, hints);
+            //console.log(code);
             return this.renderResult(code, width, height, quietZone);
         }
         /**
@@ -23259,8 +23270,8 @@
             return rect;
         }
     }
-    // BrowserQRCodeSvgWriter.QUIET_ZONE_SIZE = 4;
-    BrowserQRCodeSvgWriter.QUIET_ZONE_SIZE = 2;
+    BrowserQRCodeSvgWriter.QUIET_ZONE_SIZE = 4;
+    //BrowserQRCodeSvgWriter.QUIET_ZONE_SIZE = 2;
     /**
      * SVG markup NameSpace
      */
