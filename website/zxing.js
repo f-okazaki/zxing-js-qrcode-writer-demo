@@ -22576,7 +22576,7 @@
                 version = Version$1.getVersionForNumber(versionNumber);
                 const bitsNeeded = this.calculateBitsNeeded(mode, headerBits, dataBits, version);
                 if (!this.willFit(bitsNeeded, version, ecLevel)) {
-                    throw new WriterException('Data too big for requested version');
+                    //throw new WriterException('Data too big for requested version');
                 }
             }
             else {
