@@ -6,7 +6,10 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Futoshi Okazaki">
+
     <title>QR Code Generator</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <!-- bootstrap 5.3の最新のCDNを読み込む-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -40,13 +43,13 @@
             <div class="tab-content">
                 <div id="futu" class="tab-pane active" role="tabpanel" aria-labelledby="futu">
 
-                    <div class="py-5 text-center">
+                    <div class="pt-5 text-center">
                         <h2>普通車　車検証　QRコード生成</h2>
                         <p class="lead">普通車の車検証は、２分割と３分割のQRコードです。</p>
                     </div>
                     <form class="needs-validation" novalidate="" action="">
                         <div class="row">
-                            <div class="col-md-12 mb-2">
+                            <div class="col-xxl-12 mb-2">
                                 <strong>分割QRコード(2)</strong>
                                 <button type="button" id="create_type_2" class="btn btn-sm btn-primary">生成</button>
                             </div>
@@ -105,7 +108,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-12 mb-2 mt-2">
+                            <div class="col-xxl-12 mb-2 mt-2">
                                 <strong>分割QRコード(3)</strong>
                                 <button type="button" id="create_type_3" class="btn btn-sm btn-primary">生成</button>
                             </div>
@@ -266,7 +269,7 @@
                         </div>
                         <hr>
                         <div class="row g-5">
-                            <div class="col-md-12 col-lg-12">
+                            <div class="col-xxl-12 col-lg-12">
                                 <div class="row g-3">
                                     <div class="col-md-2">
                                         <label for="total_page2" class="form-label">分割数</label>
@@ -301,7 +304,7 @@
                                 </div>
                                 <hr class="my-4">
                                 <button class="w-100 btn btn-primary btn-lg" type="button"
-                                    id="generate">QRコード生成</button>
+                                    id="generate">QRデータ生成</button>
                                 <hr class="my-4">
                                 <button class="w-100 btn btn-warning btn-lg" type="button" id="write">QRコード生成</button>
                             </div>
@@ -309,7 +312,7 @@
                     </form>
                     <!-- 分割総数をセットするテキストボックス-->
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-xxl-12">
                             <span id="write-svg2"></span>
                             <span class="p-3"></span>
                             <span id="write-svg3"></span>
@@ -318,13 +321,13 @@
                 </div>
                 <!-- 軽自動車タブ-->
                 <div id="kei" class="tab-pane" role="tabpanel" aria-labelledby="kei">
-                    <div class="py-5 text-center">
+                    <div class="pt-5 text-center">
                         <h2>軽自動車 車検証 QRコード生成</h2>
                         <p class="lead">軽自動車の車検証は、分割ではありません。通常のQRコードです。</p>
                     </div>
                     <form class="needs-validation" novalidate="" action="">
                         <div class="row">
-                            <div class="col-md-12 mb-2">
+                            <div class="col-xxl-12 mb-2">
                                 <strong>QRコード(1)</strong>
                                 <button type="button" id="create_kei_1"
                                     class="btn btn-sm btn-primary">生成</button>　<small>※区切り文字なしなのでスペースを意識すること</small>
@@ -382,7 +385,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-12 mb-2 mt-2">
+                            <div class="col-xxl-12 mb-2 mt-2">
                                 <strong>QRコード(2)</strong>
                                 <button type="button" id="create_kei_2" class="btn btn-sm btn-primary">生成</button>
                             </div>
@@ -447,7 +450,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-12 mb-2 mt-2">
+                            <div class="col-xxl-12 mb-2 mt-2">
                                 <strong>QRコード(3)</strong>
                                 <button type="button" id="create_kei_3" class="btn btn-sm btn-primary">生成</button>
                             </div>
@@ -598,24 +601,26 @@
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="kei_3_19" class="form-label">燃料の種類コード</label>
+                                <label for="kei_3_19" class="form-label">予備コード(燃料の種類コード)</label>
                                 <input type="text" class="form-control" id="kei_3_19" placeholder="" maxlength="2"
                                     value="999999">
                                 <div class="invalid-feedback">
                                     半角固定2文字を入力してください。
                                 </div>
                             </div>
+                            <!--
                             <div class="col-md-2">
                                 <label for="kei_3_20" class="form-label">予備項目</label>
                                 <input type="text" class="form-control" id="kei_3_20" placeholder="" maxlength="3"
-                                    value="">
+                                    value="999">
                                 <div class="invalid-feedback">
                                     半角固定3文字を入力してください。
                                 </div>
                             </div>
+                            -->
                         </div>
                         <div class="row">
-                            <div class="col-md-12 mb-2 mt-2">
+                            <div class="col-xxl-12 mb-2 mt-2">
                                 <strong>QRコード(4)</strong>
                                 <button type="button" id="create_kei_4" class="btn btn-sm btn-primary">生成</button>
                             </div>
@@ -648,7 +653,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12 mb-2 mt-2">
+                            <div class="col-xxl-12 mb-2 mt-2">
                                 <strong>QRコード(5)</strong>
                                 <button type="button" id="create_kei_5" class="btn btn-sm btn-primary">生成</button>
                             </div>
@@ -681,7 +686,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-12 mb-2 mt-2">
+                            <div class="col-xxl-12 mb-2 mt-2">
                                 <strong>QRコード(6)</strong>
                                 <button type="button" id="create_kei_6" class="btn btn-sm btn-primary">生成</button>
                             </div>
@@ -813,9 +818,9 @@
 
                         <hr>
                         <div class="row g-5">
-                            <div class="col-md-12 col-lg-12">
+                            <div class="col-xxl-12 col-lg-12">
                                 <div class="row g-3">
-                                    <div class="col-md-12">
+                                    <div class="col-xxl-12">
                                         <label for="kei_text1" class="form-label">車検証QRデータ コード(1)</label>
                                         <input type="text" class="form-control" id="kei_text1" placeholder=""
                                             value="K02                杉並　　４８０そ１８８５HA25V-734037        164050003"
@@ -824,14 +829,14 @@
                                 </div>
 
                                 <div class="row g-3">
-                                    <div class="col-md-12">
+                                    <div class="col-xxl-12">
                                         <label for="kei_text2" class="form-label">車検証QRデータ コード(2)</label>
                                         <input type="text" class="form-control" id="kei_text2" placeholder=""
                                             value="K/22/杉並　　４８０そ１８８５/1/HA25V-734037/K6A/1" required="">
                                     </div>
                                 </div>
                                 <div class="row g-3">
-                                    <div class="col-md-12">
+                                    <div class="col-xxl-12">
                                         <label for="kei_text3" class="form-label">車検証QRデータ コード(3)</label>
                                         <input type="text" class="form-control" id="kei_text3" placeholder=""
                                             value="K/31/-  /164050003/240719/1205/HBD-HA25V/0045/-/-/0028/- /-  /-/-/-/-   /-    /999999"
@@ -839,21 +844,21 @@
                                     </div>
                                 </div>
                                 <div class="row g-3">
-                                    <div class="col-md-12">
+                                    <div class="col-xxl-12">
                                         <label for="kei_text4" class="form-label">車検証QRデータ コード(4)</label>
                                         <input type="text" class="form-control" id="kei_text4" placeholder=""
                                             value="K/51/株式会社　クオリアシステムズ" required="">
                                     </div>
                                 </div>
                                 <div class="row g-3">
-                                    <div class="col-md-12">
+                                    <div class="col-xxl-12">
                                         <label for="kei_text5" class="form-label">車検証QRデータ コード(5)</label>
                                         <input type="text" class="form-control" id="kei_text5" placeholder=""
                                             value="K/61/東京都杉並区高円寺南４−２６−１６−５F" required="">
                                     </div>
                                 </div>
                                 <div class="row g-3">
-                                    <div class="col-md-12">
+                                    <div class="col-xxl-12">
                                         <label for="kei_text6" class="form-label">車検証QRデータ コード(6)</label>
                                         <input type="text" class="form-control" id="kei_text6" placeholder=""
                                             value="K/71/軽自動車/貨物/自家用/021/2/4/200/100/1040/1050/131/86700/km" required="">
@@ -861,7 +866,7 @@
                                 </div>
                                 <hr class="my-4">
                                 <button class="w-100 btn btn-primary btn-lg" type="button"
-                                    id="generate_kei">QRコード生成</button>
+                                    id="generate_kei">QRデータ生成</button>
                                 <hr class="my-4">
                                 <button class="w-100 btn btn-warning btn-lg" type="button"
                                     id="write_kei">QRコード生成</button>
@@ -870,27 +875,27 @@
                     </form>
                     <!-- 分割総数をセットするテキストボックス-->
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-xxl-12">
                             <span id="write-svg-kei"></span>
                         </div>
                     </div>
                 </div>
                 <!-- 軽自動車IC TAB-->
                 <div id="kei_ic" class="tab-pane" role="tabpanel" aria-labelledby="kei_ic">
-                    <div class="py-5 text-center">
+                    <div class="pt-5 text-center">
                         <h2>軽自動車IC 車検証 QRコード生成</h2>
                         <p class="lead">軽自動車の車検証は、分割ではありません。通常のQRコードです。</p>
                     </div>
                     <form class="needs-validation" novalidate="" action="">
                         <div class="row">
-                            <div class="col-md-12 mb-2">
+                            <div class="col-xxl-12 mb-2">
                                 <strong>QRコード(2)</strong>
                                 <button type="button" id="create_kei_ic_2" class="btn btn-sm btn-primary">生成</button>
                             </div>
                         </div>
                         <div class="row qr">
                             <div class="col-md-2">
-                                <label for="kei_ic_2_1" class="form-label">システムID</label>
+                                <label for="kei_ic_2_1" class="form-label">システムID(半固1)</label>
                                 <input type="text" class="form-control" id="kei_ic_2_1" placeholder="" maxlength="1"
                                     value="K">
                                 <div class="invalid-feedback">
@@ -898,7 +903,7 @@
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="kei_ic_2_2" class="form-label">バージョン番号</label>
+                                <label for="kei_ic_2_2" class="form-label">バージョン番号(半固2)</label>
                                 <input type="text" class="form-control" id="kei_ic_2_2" placeholder="" maxlength="2"
                                     value="22">
                                 <div class="invalid-feedback">
@@ -906,7 +911,7 @@
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="kei_ic_2_3" class="form-label">車両番号</label>
+                                <label for="kei_ic_2_3" class="form-label">車両番号(全固12)</label>
                                 <input type="text" class="form-control" id="kei_ic_2_3" placeholder="" maxlength="12"
                                     value="杉並　　４８０そ１８８５">
                                 <div class="invalid-feedback">
@@ -914,7 +919,7 @@
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="kei_ic_2_4" class="form-label">標板の枚数・大きさ</label>
+                                <label for="kei_ic_2_4" class="form-label">標板の枚数・大きさ(半固1)</label>
                                 <input type="text" class="form-control" id="kei_ic_2_4" placeholder="" maxlength="1"
                                     value="1">
                                 <div class="invalid-feedback">
@@ -922,7 +927,7 @@
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="kei_ic_2_5" class="form-label">車台番号</label>
+                                <label for="kei_ic_2_5" class="form-label">車台番号(半可20)</label>
                                 <input type="text" class="form-control" id="kei_ic_2_5" placeholder="" maxlength="20"
                                     value="HA25V-734037">
                                 <div class="invalid-feedback">
@@ -930,7 +935,7 @@
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="kei_ic_2_6" class="form-label">原動機型式</label>
+                                <label for="kei_ic_2_6" class="form-label">原動機型式(半可24)</label>
                                 <input type="text" class="form-control" id="kei_ic_2_6" placeholder="" maxlength="17"
                                     value="K6A">
                                 <div class="invalid-feedback">
@@ -948,7 +953,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-12 mb-2 mt-2">
+                            <div class="col-xxl-12 mb-2 mt-2">
                                 <strong>QRコード(3)</strong>
                                 <button type="button" id="create_kei_ic_3" class="btn btn-sm btn-primary">生成</button>
                             </div>
@@ -1101,7 +1106,7 @@
                             <div class="col-md-2">
                                 <label for="kei_ic_3_19" class="form-label">燃料の種類コード</label>
                                 <input type="text" class="form-control" id="kei_ic_3_19" placeholder="" maxlength="2"
-                                    value="999999">
+                                    value="01">
                                 <div class="invalid-feedback">
                                     半角固定2文字を入力してください。
                                 </div>
@@ -1109,7 +1114,7 @@
                             <div class="col-md-2">
                                 <label for="kei_ic_3_20" class="form-label">予備項目</label>
                                 <input type="text" class="form-control" id="kei_ic_3_20" placeholder="" maxlength="3"
-                                    value="">
+                                    value="999">
                                 <div class="invalid-feedback">
                                     半角固定3文字を入力してください。
                                 </div>
@@ -1117,19 +1122,19 @@
                         </div>
                         <hr>
                         <div class="row g-5">
-                            <div class="col-md-12 col-lg-12">
+                            <div class="col-xxl-12 col-lg-12">
                                 <div class="row g-3">
-                                    <div class="col-md-12">
+                                    <div class="col-xxl-12">
                                         <label for="kei_ic_text2" class="form-label">車検証QRデータ コード(2)</label>
                                         <input type="text" class="form-control" id="kei_ic_text2" placeholder=""
                                             value="K/22/杉並　　４８０そ１８８５/1/HA25V-734037/K6A/1" required="">
                                     </div>
                                 </div>
                                 <div class="row g-3">
-                                    <div class="col-md-12">
+                                    <div class="col-xxl-12">
                                         <label for="kei_ic_text3" class="form-label">車検証QRデータ コード(3)</label>
                                         <input type="text" class="form-control" id="kei_ic_text3" placeholder=""
-                                            value="K/31/-  /164050003/240719/1205/HBD-HA25V/0045/-/-/0028/- /-  /-/-/-/-   /-    /999999"
+                                            value="K/32/-  /164050003/240719/1205/HBD-HA25V/0045/-/-/0028/- /-  /-/-/-/-   /-    /01/999"
                                             required="">
                                     </div>
                                 </div>
@@ -1146,7 +1151,7 @@
                     </form>
                     <!-- 分割総数をセットするテキストボックス-->
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-xxl-12">
                             <span id="write-svg-kei-ic"></span>
                         </div>
                     </div>
@@ -1271,9 +1276,8 @@
             const kei_3_17 = document.getElementById('kei_3_17');
             const kei_3_18 = document.getElementById('kei_3_18');
             const kei_3_19 = document.getElementById('kei_3_19');
-            const kei_3_20 = document.getElementById('kei_3_20');
-
-            kei_text3.value = kei_3_1.value + '/' + kei_3_2.value + '/' + kei_3_3.value + '/' + kei_3_4.value + '/' + kei_3_5.value + '/' + kei_3_6.value + '/' + kei_3_7.value + '/' + kei_3_8.value + '/' + kei_3_9.value + '/' + kei_3_10.value + '/' + kei_3_11.value + '/' + kei_3_12.value + '/' + kei_3_13.value + '/' + kei_3_14.value + '/' + kei_3_15.value + '/' + kei_3_16.value + '/' + kei_3_17.value + '/' + kei_3_18.value + '/' + kei_3_19.value + '/' + kei_3_20.value;
+            //const kei_3_20 = document.getElementById('kei_3_20');
+            kei_text3.value = kei_3_1.value + '/' + kei_3_2.value + '/' + kei_3_3.value + '/' + kei_3_4.value + '/' + kei_3_5.value + '/' + kei_3_6.value + '/' + kei_3_7.value + '/' + kei_3_8.value + '/' + kei_3_9.value + '/' + kei_3_10.value + '/' + kei_3_11.value + '/' + kei_3_12.value + '/' + kei_3_13.value + '/' + kei_3_14.value + '/' + kei_3_15.value + '/' + kei_3_16.value + '/' + kei_3_17.value + '/' + kei_3_18.value + '/' + kei_3_19.value;
         }
         // QRコード生成ボタンを押したときの処理を関数で定義
         function createKei4() {
@@ -1513,7 +1517,7 @@
                 }
                 const hints = new Map();
                 // QRコードのエラー訂正レベルの設定
-                hints.set(ZXing.EncodeHintType.ERROR_CORRECTION, "M");
+                hints.set(ZXing.EncodeHintType.ERROR_CORRECTION, "L");
                 // QRコードのバージョンの設定　軽自動車は５
                 hints.set(ZXing.EncodeHintType.QR_VERSION, 5);
 
