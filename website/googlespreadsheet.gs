@@ -50,34 +50,6 @@ function getSpreadsheetData(param) {
     }
   }
   Logger.log(data2);
-
-
-  // 普通
-  // const data = dataValues.map(row => {
-  //   if (param == "f") {
-  //     if (row[0] == "普通自動車") {
-  //       data2.push({
-  //         // 
-  //         ft_2_2: row[2], // 登録番号
-  //         ft_3_7: row[8], // 初度登録年月
-  //         ft_3_3: row[9],//　型式指定番号・類別区分番号
-  //         ft_text: row[0] + row[2] + row[8] + row[11] + row[12],
-  //       });
-  //     }
-  //   } else if (param == "k") {
-  //     if (row[0] == "軽自動車") {
-  //       data2.push({
-  //         // 
-  //         kei_2_3: row[2], // 登録番号
-  //         kei_3_6: row[8], // 初度登録年月
-  //         kei_3_4: row[9],//　型式指定番号・類別区分番号
-  //         kei_text: row[0] + row[2] + row[8] + row[11] + row[12],
-  //       });
-  //     }
-  //   }
-  // });
-  Logger.log(data2);
-  //return dataValues;
   return data2;
 }
 
