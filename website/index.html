@@ -47,6 +47,13 @@
                         <h2>普通車　車検証　QRコード生成</h2>
                         <p class="lead">普通車の車検証は、２分割と３分割のQRコードです。</p>
                     </div>
+                    <!-- データ参照元のリンクを記載-->
+                    <div class="row">
+                        <div class="col-xxl-12">
+                            <a href="https://docs.google.com/spreadsheets/d/1s-rDuqLaFTlyHogyf-AMcV6n50M8rvH55hKpgQNHYXk/edit?usp=sharing"
+                                target="_blank">QRコードデータ一覧（Google SpreadSheet</a>
+                        </div>
+                    </div>
                     <select id="ft_preset" class="form-select">
                         <option value="0">車検証データを選択してください</option>
                     </select>
@@ -73,7 +80,7 @@
                             <div class="col-md-2">
                                 <label for="ft_2_2" class="form-label">自動車登録番号および車両番号</label>
                                 <input type="text" class="form-control" id="ft_2_2" placeholder="" maxlength="12"
-                                    value="杉並　　３３０ほ８８９９">
+                                    value="杉　　　３３０ほ８８９９">
                                 <div class="invalid-feedback">
                                     全角固定１２文字を入力してください。
                                 </div>
@@ -288,7 +295,7 @@
                                     <div class="col-md-10">
                                         <label for="ft_text2" class="form-label">車検証QRデータ</label>
                                         <input type="text" class="form-control" id="ft_text2" placeholder=""
-                                            value="2/杉並　　３３０ほ８８９９/A/GRS210-6021369/4GR/1" required="">
+                                            value="2/杉　　　３３０ほ８８９９/A/GRS210-6021369/4GR/1" required="">
                                     </div>
                                 </div>
 
@@ -339,6 +346,13 @@
                         <h2>軽自動車 車検証 QRコード生成</h2>
                         <p class="lead">軽自動車の車検証は、分割ではありません。通常のQRコードです。</p>
                     </div>
+                    <!-- データ参照元のリンクを記載-->
+                    <div class="row">
+                        <div class="col-xxl-12">
+                            <a href="https://docs.google.com/spreadsheets/d/1s-rDuqLaFTlyHogyf-AMcV6n50M8rvH55hKpgQNHYXk/edit?usp=sharing"
+                                target="_blank">QRコードデータ一覧（Google SpreadSheet</a>
+                        </div>
+                    </div>
                     <select id="kei_preset" class="form-select">
                         <option value="0">車検証データを選択してください</option>
                     </select>
@@ -380,7 +394,7 @@
                             <div class="col-md-2">
                                 <label for="kei_1_4" class="form-label">車両番号</label>
                                 <input type="text" class="form-control" id="kei_1_4" placeholder="" maxlength="12"
-                                    value="杉並　　４８０そ１８８５">
+                                    value="杉　　　４８０そ１８８５">
                                 <div class="invalid-feedback">
                                     全角固定１２文字を入力してください。
                                 </div>
@@ -429,7 +443,7 @@
                             <div class="col-md-2">
                                 <label for="kei_2_3" class="form-label">車両番号</label>
                                 <input type="text" class="form-control" id="kei_2_3" placeholder="" maxlength="12"
-                                    value="杉並　　４８０そ１８８５">
+                                    value="杉　　　４８０そ１８８５">
                                 <div class="invalid-feedback">
                                     全角固定12文字を入力してください。
                                 </div>
@@ -697,7 +711,7 @@
                             <div class="col-md-2">
                                 <label for="kei_5_3" class="form-label">使用者住所</label>
                                 <input type="text" class="form-control" id="kei_5_3" placeholder="" maxlength="35"
-                                    value="東京都杉並区高円寺南４−２６−１６−５F">
+                                    value="東京都杉区高円寺南">
                                 <div class="invalid-feedback">
                                     全角35文字を入力してください。
                                 </div>
@@ -842,7 +856,7 @@
                                     <div class="col-xxl-12">
                                         <label for="kei_text1" class="form-label">車検証QRデータ コード(1)</label>
                                         <input type="text" class="form-control" id="kei_text1" placeholder=""
-                                            value="K02                杉並　　４８０そ１８８５HA25V-734037        164050003"
+                                            value="K02                杉　　　４８０そ１８８５HA25V-734037        164050003"
                                             required="">
                                     </div>
                                 </div>
@@ -851,7 +865,7 @@
                                     <div class="col-xxl-12">
                                         <label for="kei_text2" class="form-label">車検証QRデータ コード(2)</label>
                                         <input type="text" class="form-control" id="kei_text2" placeholder=""
-                                            value="K/22/杉並　　４８０そ１８８５/1/HA25V-734037/K6A/1" required="">
+                                            value="K/22/杉　　　４８０そ１８８５/1/HA25V-734037/K6A/1" required="">
                                     </div>
                                 </div>
                                 <div class="row g-3">
@@ -873,7 +887,7 @@
                                     <div class="col-xxl-12">
                                         <label for="kei_text5" class="form-label">車検証QRデータ コード(5)</label>
                                         <input type="text" class="form-control" id="kei_text5" placeholder=""
-                                            value="K/61/東京都杉並区高円寺南４−２６−１６−５F" required="">
+                                            value="K/61/東京都杉区高円寺" required="">
                                     </div>
                                 </div>
                                 <div class="row g-3">
@@ -911,6 +925,13 @@
                         <h2>軽自動車IC 車検証 QRコード生成</h2>
                         <p class="lead">軽自動車の車検証は、分割ではありません。通常のQRコードです。</p>
                     </div>
+                    <!-- データ参照元のリンクを記載-->
+                    <div class="row">
+                        <div class="col-xxl-12">
+                            <a href="https://docs.google.com/spreadsheets/d/1s-rDuqLaFTlyHogyf-AMcV6n50M8rvH55hKpgQNHYXk/edit?usp=sharing"
+                                target="_blank">QRコードデータ一覧（Google SpreadSheet</a>
+                        </div>
+                    </div>
                     <select id="kei_ic_preset" class="form-select">
                         <option value="0">車検証データを選択してください</option>
                     </select>
@@ -943,7 +964,7 @@
                             <div class="col-md-2">
                                 <label for="kei_ic_2_3" class="form-label">車両番号(全固12)</label>
                                 <input type="text" class="form-control" id="kei_ic_2_3" placeholder="" maxlength="12"
-                                    value="杉並　　４８０そ１８８５">
+                                    value="杉　　　４８０そ１８８５">
                                 <div class="invalid-feedback">
                                     全角固定12文字を入力してください。
                                 </div>
@@ -1157,7 +1178,7 @@
                                     <div class="col-xxl-12">
                                         <label for="kei_ic_text2" class="form-label">車検証QRデータ コード(2)</label>
                                         <input type="text" class="form-control" id="kei_ic_text2" placeholder=""
-                                            value="K/22/杉並　　４８０そ１８８５/1/HA25V-734037/K6A/1" required="">
+                                            value="K/22/杉　　　４８０そ１８８５/1/HA25V-734037/K6A/1" required="">
                                     </div>
                                 </div>
                                 <div class="row g-3">
