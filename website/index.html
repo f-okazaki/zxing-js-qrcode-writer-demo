@@ -47,6 +47,12 @@
                         <h2>普通車　車検証　QRコード生成</h2>
                         <p class="lead">普通車の車検証は、２分割と３分割のQRコードです。</p>
                     </div>
+                    <select id="ft_preset" class="form-select">
+                        <option value="0">車検証データを選択してください</option>
+                    </select>
+
+                    <hr class="my-4">
+
                     <form class="needs-validation" novalidate="" action="">
                         <div class="row">
                             <div class="col-xxl-12 mb-2">
@@ -57,48 +63,48 @@
 
                         <div class="row qr">
                             <div class="col-md-2">
-                                <label for="qr2_1" class="form-label">バージョン番号</label>
-                                <input type="text" class="form-control" id="qr2_1" placeholder="" maxlength="1"
+                                <label for="ft_2_1" class="form-label">バージョン番号</label>
+                                <input type="text" class="form-control" id="ft_2_1" placeholder="" maxlength="1"
                                     value="2">
                                 <div class="invalid-feedback">
                                     半角固定１文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr2_2" class="form-label">自動車登録番号および車両番号</label>
-                                <input type="text" class="form-control" id="qr2_2" placeholder="" maxlength="12"
+                                <label for="ft_2_2" class="form-label">自動車登録番号および車両番号</label>
+                                <input type="text" class="form-control" id="ft_2_2" placeholder="" maxlength="12"
                                     value="杉並　　３３０ほ８８９９">
                                 <div class="invalid-feedback">
                                     全角固定１２文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr2_3" class="form-label">標板の枚数・大きさ・希望番号の識別</label>
-                                <input type="text" class="form-control" id="qr2_3" placeholder="" maxlength="1"
+                                <label for="ft_2_3" class="form-label">標板の枚数・大きさ・希望番号の識別</label>
+                                <input type="text" class="form-control" id="ft_2_3" placeholder="" maxlength="1"
                                     value="A">
                                 <div class="invalid-feedback">
                                     半角固定１文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr2_4" class="form-label">車台番号</label>
-                                <input type="text" class="form-control" id="qr2_4" placeholder="" maxlength="23"
+                                <label for="ft_2_4" class="form-label">車台番号</label>
+                                <input type="text" class="form-control" id="ft_2_4" placeholder="" maxlength="23"
                                     value="GRS210-6021369">
                                 <div class="invalid-feedback">
                                     半角可変２３文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr2_5" class="form-label">原動機型式</label>
-                                <input type="text" class="form-control" id="qr2_5" placeholder="" maxlength="24"
+                                <label for="ft_2_5" class="form-label">原動機型式</label>
+                                <input type="text" class="form-control" id="ft_2_5" placeholder="" maxlength="24"
                                     value="4GR">
                                 <div class="invalid-feedback">
                                     半角可変２４文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr2_6" class="form-label">帳票種別</label>
-                                <input type="text" class="form-control" id="qr2_6" placeholder="" maxlength="1"
+                                <label for="ft_2_6" class="form-label">帳票種別</label>
+                                <input type="text" class="form-control" id="ft_2_6" placeholder="" maxlength="1"
                                     value="1">
                                 <div class="invalid-feedback">
                                     半角固定１文字を入力してください。
@@ -115,152 +121,152 @@
                         </div>
                         <div class="row qr">
                             <div class="col-md-2">
-                                <label for="qr3_1" class="form-label">バージョン番号</label>
-                                <input type="text" class="form-control" id="qr3_1" placeholder="" maxlength="1"
+                                <label for="ft_3_1" class="form-label">バージョン番号</label>
+                                <input type="text" class="form-control" id="ft_3_1" placeholder="" maxlength="1"
                                     value="2">
                                 <div class="invalid-feedback">
                                     半角固定１文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr3_2" class="form-label">車台番号打刻位置</label>
-                                <input type="text" class="form-control" id="qr3_2" placeholder="" maxlength="3"
+                                <label for="ft_3_2" class="form-label">車台番号打刻位置</label>
+                                <input type="text" class="form-control" id="ft_3_2" placeholder="" maxlength="3"
                                     value="-  ">
                                 <div class="invalid-feedback">
                                     半角固定３文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr3_3" class="form-label">型式指定番号・類別区分番号</label>
-                                <input type="text" class="form-control" id="qr3_3" placeholder="" maxlength="10"
+                                <label for="ft_3_3" class="form-label">型式指定番号・類別区分番号</label>
+                                <input type="text" class="form-control" id="ft_3_3" placeholder="" maxlength="10"
                                     value="174900040">
                                 <div class="invalid-feedback">
                                     半角可変１０文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr3_4" class="form-label">有効期間の満了する日</label>
-                                <input type="text" class="form-control" id="qr3_4" placeholder="" maxlength="6"
+                                <label for="ft_3_4" class="form-label">有効期間の満了する日</label>
+                                <input type="text" class="form-control" id="ft_3_4" placeholder="" maxlength="6"
                                     value="240530">
                                 <div class="invalid-feedback">
                                     半角固定６文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr3_7" class="form-label">初度登録年月</label>
-                                <input type="text" class="form-control" id="qr3_7" placeholder="" maxlength="4"
+                                <label for="ft_3_7" class="form-label">初度登録年月</label>
+                                <input type="text" class="form-control" id="ft_3_7" placeholder="" maxlength="4"
                                     value="1705">
                                 <div class="invalid-feedback">
                                     半角固定4文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr3_8" class="form-label">形式</label>
-                                <input type="text" class="form-control" id="qr3_8" placeholder="" maxlength="17"
+                                <label for="ft_3_8" class="form-label">形式</label>
+                                <input type="text" class="form-control" id="ft_3_8" placeholder="" maxlength="17"
                                     value="DBA-GRS210">
                                 <div class="invalid-feedback">
                                     半角可変１７文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr3_9" class="form-label">軸重（前前）</label>
-                                <input type="text" class="form-control" id="qr3_9" placeholder="" maxlength="4"
+                                <label for="ft_3_9" class="form-label">軸重（前前）</label>
+                                <input type="text" class="form-control" id="ft_3_9" placeholder="" maxlength="4"
                                     value="0084">
                                 <div class="invalid-feedback">
                                     半角固定４文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr3_10" class="form-label">軸重（前後）</label>
-                                <input type="text" class="form-control" id="qr3_10" placeholder="" maxlength="4"
+                                <label for="ft_3_10" class="form-label">軸重（前後）</label>
+                                <input type="text" class="form-control" id="ft_3_10" placeholder="" maxlength="4"
                                     value="-   ">
                                 <div class="invalid-feedback">
                                     半角固定４文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr3_11" class="form-label">軸重（後前）</label>
-                                <input type="text" class="form-control" id="qr3_11" placeholder="" maxlength="4"
+                                <label for="ft_3_11" class="form-label">軸重（後前）</label>
+                                <input type="text" class="form-control" id="ft_3_11" placeholder="" maxlength="4"
                                     value="-   ">
                                 <div class="invalid-feedback">
                                     半角固定４文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr3_12" class="form-label">軸重（後後）</label>
-                                <input type="text" class="form-control" id="qr3_12" placeholder="" maxlength="4"
+                                <label for="ft_3_12" class="form-label">軸重（後後）</label>
+                                <input type="text" class="form-control" id="ft_3_12" placeholder="" maxlength="4"
                                     value="0075">
                                 <div class="invalid-feedback">
                                     半角固定４文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr3_13" class="form-label">騒音規制</label>
-                                <input type="text" class="form-control" id="qr3_13" placeholder="" maxlength="2"
+                                <label for="ft_3_13" class="form-label">騒音規制</label>
+                                <input type="text" class="form-control" id="ft_3_13" placeholder="" maxlength="2"
                                     value="10">
                                 <div class="invalid-feedback">
                                     半角固定２文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr3_14" class="form-label">近接排気騒音規制値</label>
-                                <input type="text" class="form-control" id="qr3_14" placeholder="" maxlength="3"
+                                <label for="ft_3_14" class="form-label">近接排気騒音規制値</label>
+                                <input type="text" class="form-control" id="ft_3_14" placeholder="" maxlength="3"
                                     value="096">
                                 <div class="invalid-feedback">
                                     半角固定３文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr3_15" class="form-label">駆動方式</label>
-                                <input type="text" class="form-control" id="qr3_15" placeholder="" maxlength="1"
+                                <label for="ft_3_15" class="form-label">駆動方式</label>
+                                <input type="text" class="form-control" id="ft_3_15" placeholder="" maxlength="1"
                                     value="2">
                                 <div class="invalid-feedback">
                                     半角固定１文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr3_16" class="form-label">オパシメータ測定車</label>
-                                <input type="text" class="form-control" id="qr3_16" placeholder="" maxlength="1"
+                                <label for="ft_3_16" class="form-label">オパシメータ測定車</label>
+                                <input type="text" class="form-control" id="ft_3_16" placeholder="" maxlength="1"
                                     value="0">
                                 <div class="invalid-feedback">
                                     半角固定１文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr3_17" class="form-label">NOx・PM測定モード</label>
-                                <input type="text" class="form-control" id="qr3_17" placeholder="" maxlength="1"
+                                <label for="ft_3_17" class="form-label">NOx・PM測定モード</label>
+                                <input type="text" class="form-control" id="ft_3_17" placeholder="" maxlength="1"
                                     value="I">
                                 <div class="invalid-feedback">
                                     半角固定１文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr3_18" class="form-label">NOx値</label>
-                                <input type="text" class="form-control" id="qr3_18" placeholder="" maxlength="4"
+                                <label for="ft_3_18" class="form-label">NOx値</label>
+                                <input type="text" class="form-control" id="ft_3_18" placeholder="" maxlength="4"
                                     value="0001">
                                 <div class="invalid-feedback">
                                     半角固定4文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr3_19" class="form-label">PM値</label>
-                                <input type="text" class="form-control" id="qr3_19" placeholder="" maxlength="5"
+                                <label for="ft_3_19" class="form-label">PM値</label>
+                                <input type="text" class="form-control" id="ft_3_19" placeholder="" maxlength="5"
                                     value="-    ">
                                 <div class="invalid-feedback">
                                     半角固定5文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr3_20" class="form-label">保安基準適用年月日</label>
-                                <input type="text" class="form-control" id="qr3_20" placeholder="" maxlength="6"
+                                <label for="ft_3_20" class="form-label">保安基準適用年月日</label>
+                                <input type="text" class="form-control" id="ft_3_20" placeholder="" maxlength="6"
                                     value="170512">
                                 <div class="invalid-feedback">
                                     半角固定6文字を入力してください。
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <label for="qr3_21" class="form-label">燃料の種類コード</label>
-                                <input type="text" class="form-control" id="qr3_21" placeholder="" maxlength="2"
+                                <label for="ft_3_21" class="form-label">燃料の種類コード</label>
+                                <input type="text" class="form-control" id="ft_3_21" placeholder="" maxlength="2"
                                     value="01">
                                 <div class="invalid-feedback">
                                     半角固定2文字を入力してください。
@@ -280,8 +286,8 @@
                                         </div>
                                     </div>
                                     <div class="col-md-10">
-                                        <label for="qr_text2" class="form-label">車検証QRデータ</label>
-                                        <input type="text" class="form-control" id="qr_text2" placeholder=""
+                                        <label for="ft_text2" class="form-label">車検証QRデータ</label>
+                                        <input type="text" class="form-control" id="ft_text2" placeholder=""
                                             value="2/杉並　　３３０ほ８８９９/A/GRS210-6021369/4GR/1" required="">
                                     </div>
                                 </div>
@@ -296,17 +302,25 @@
                                         </div>
                                     </div>
                                     <div class="col-md-10">
-                                        <label for="qr_text3" class="form-label">車検証QRデータ</label>
-                                        <input type="text" class="form-control" id="qr_text3" placeholder=""
+                                        <label for="ft_text3" class="form-label">車検証QRデータ</label>
+                                        <input type="text" class="form-control" id="ft_text3" placeholder=""
                                             value="2/-  /174900040/240530/1705/DBA-GRS210/0084/-   /-   /0075/10/096/2/0/I/0001/-    /170512/01"
                                             required="">
                                     </div>
                                 </div>
                                 <hr class="my-4">
-                                <button class="w-100 btn btn-primary btn-lg" type="button"
-                                    id="generate">QRデータ生成</button>
-                                <hr class="my-4">
-                                <button class="w-100 btn btn-warning btn-lg" type="button" id="write">QRコード生成</button>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <button class="w-100 btn btn-primary btn-lg" type="button"
+                                            id="generate">QRデータ生成</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button class="w-100 btn btn-warning btn-lg" type="button"
+                                            id="write">QRコード生成</button>
+                                    </div>
+                                </div>
+
+
                             </div>
                         </div>
                     </form>
@@ -325,6 +339,11 @@
                         <h2>軽自動車 車検証 QRコード生成</h2>
                         <p class="lead">軽自動車の車検証は、分割ではありません。通常のQRコードです。</p>
                     </div>
+                    <select id="kei_preset" class="form-select">
+                        <option value="0">車検証データを選択してください</option>
+                    </select>
+
+                    <hr class="my-4">
                     <form class="needs-validation" novalidate="" action="">
                         <div class="row">
                             <div class="col-xxl-12 mb-2">
@@ -865,11 +884,17 @@
                                     </div>
                                 </div>
                                 <hr class="my-4">
-                                <button class="w-100 btn btn-primary btn-lg" type="button"
-                                    id="generate_kei">QRデータ生成</button>
-                                <hr class="my-4">
-                                <button class="w-100 btn btn-warning btn-lg" type="button"
-                                    id="write_kei">QRコード生成</button>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <button class="w-100 btn btn-primary btn-lg" type="button"
+                                            id="generate_kei">QRデータ生成</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button class="w-100 btn btn-warning btn-lg" type="button"
+                                            id="write_kei">QRコード生成</button>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </form>
@@ -886,6 +911,11 @@
                         <h2>軽自動車IC 車検証 QRコード生成</h2>
                         <p class="lead">軽自動車の車検証は、分割ではありません。通常のQRコードです。</p>
                     </div>
+                    <select id="kei_ic_preset" class="form-select">
+                        <option value="0">車検証データを選択してください</option>
+                    </select>
+
+                    <hr class="my-4">
                     <form class="needs-validation" novalidate="" action="">
                         <div class="row">
                             <div class="col-xxl-12 mb-2">
@@ -1140,12 +1170,16 @@
                                 </div>
                                 <hr class="my-4">
 
-                                <button class="w-100 btn btn-primary btn-lg" type="button"
-                                    id="generate_kei_ic">QRデータ生成</button>
-                                <hr class="my-4">
-
-                                <button class="w-100 btn btn-warning btn-lg" type="button"
-                                    id="write_kei_ic">QRコード生成</button>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <button class="w-100 btn btn-primary btn-lg" type="button"
+                                            id="generate_kei_ic">QRデータ生成</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button class="w-100 btn btn-warning btn-lg" type="button"
+                                            id="write_kei_ic">QRコード生成</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -1187,47 +1221,139 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
         integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
         crossorigin="anonymous"></script>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- ここからQRコードのライブラリを読み込む-->
     <script type="text/javascript" src="zxing.js"></script>
     <script type="text/javascript" src="lib.js"></script>
 
     <script type="text/javascript">
 
+        const googleSpreadSheetUrl = 'https://script.google.com/macros/s/AKfycbwCoswcSgd0iyocY6rHxmR0vDrOaDW6DqkkVMmDFtn2P5GWkW1QJp31AeRXjoHLe4TM/exec';
+
+        // selectのid=ft_presetに値をセットする ajaxでgoogleSpreadSheetUrlにアクセスしてデータを取得する getパラメータには、param 変数に文字列fまたはkをセットする。 データはjson形式で取得する
+        $.ajax({
+            url: googleSpreadSheetUrl,
+            type: 'GET',
+            data: {
+                param: 'f'
+            },
+            dataType: 'json'
+        }).done(function (data) {
+            // 取得したデータをselectのid=ft_presetにセットする
+            for (let i = 0; i < data.length; i++) {
+                // valには、ft_2_2.ft_3_7,ft_3_3を”|”を区切り文字で連結した文字列をセットする
+                $('#ft_preset').append($('<option>').html(data[i].ft_text).val(data[i].ft_2_2 + '|' + data[i].ft_3_7 + '|' + data[i].ft_3_3));
+            }
+        }).fail(function (data) {
+            console.log('error');
+        });
+
+        // id kei_preset にも値をセットする
+        $.ajax({
+            url: googleSpreadSheetUrl,
+            type: 'GET',
+            data: {
+                param: 'k'
+            },
+            dataType: 'json'
+        }).done(function (data) {
+            // 取得したデータをselectのid=ft_presetにセットする
+            for (let i = 0; i < data.length; i++) {
+                // valには、kei_2_3.kei_3_6,kei_3_4を”|”を区切り文字で連結した文字列をセットする
+                $('#kei_preset').append($('<option>').html(data[i].kei_text).val(data[i].kei_2_3 + '|' + data[i].kei_3_6 + '|' + data[i].kei_3_4));
+            }
+        }).fail(function (data) {
+            console.log('error');
+        });
+        // kei_ic_preset にも値をセットする
+        $.ajax({
+            url: googleSpreadSheetUrl,
+            type: 'GET',
+            data: {
+                param: 'k'
+            },
+            dataType: 'json'
+        }).done(function (data) {
+            // 取得したデータをselectのid=ft_presetにセットする
+            for (let i = 0; i < data.length; i++) {
+                // valには、kei_ic_2_3.kei_ic_3_6,kei_ic_3_4を”|”を区切り文字で連結した文字列をセットする
+                $('#kei_ic_preset').append($('<option>').html(data[i].kei_text).val(data[i].kei_2_3 + '|' + data[i].kei_3_6 + '|' + data[i].kei_3_4));
+            }
+        }).fail(function (data) {
+            console.log('error');
+        });
+
+
+        // #ft_preset が変更されたら、valueにセットされているデータを"|"で分割し、それぞれ#ft_2_2, #ft_3_7, #ft_3_3に値をセットする
+        $('#ft_preset').change(function () {
+            const val = $(this).val().split('|');
+            $('#ft_2_2').val(val[0]);
+            $('#ft_3_7').val(val[1]);
+            $('#ft_3_3').val(val[2]);
+            // write-svgをクリアする
+            $('#write-svg2').html('');
+            $('#write-svg3').html('');
+
+        });
+
+        // kei_preset が変更されたら、valueにセットされているデータを"|"で分割し、それぞれ#kei_2_3, #kei_3_6, #kei_3_4に値をセットする
+        $('#kei_preset').change(function () {
+            const val = $(this).val().split('|');
+            $('#kei_2_3').val(val[0]);
+            $('#kei_3_6').val(val[1]);
+            $('#kei_3_4').val(val[2]);
+            // write-svg-keiをクリアする
+            $('#write-svg-kei').html('');
+        });
+
+        // kei_ic_preset が変更されたら、valueにセットされているデータを"|"で分割し、それぞれ#kei_ic_2_3, #kei_ic_3_6, #kei_ic_3_4に値をセットする
+        $('#kei_ic_preset').change(function () {
+            const val = $(this).val().split('|');
+            $('#kei_ic_2_3').val(val[0]);
+            $('#kei_ic_3_6').val(val[1]);
+            $('#kei_ic_3_4').val(val[2]);
+            // write-svg-kei-icをクリアする
+            $('#write-svg-kei-ic').html('');
+        });
+
+
+
+
         // create_ボタンを押したときの呼び出す関数を定義
         function createQRCodeType2() {
             // QRコードを生成する
-            const qr_text2 = document.getElementById('qr_text2');
-            const qr2_1 = document.getElementById('qr2_1');
-            const qr2_2 = document.getElementById('qr2_2');
-            const qr2_3 = document.getElementById('qr2_3');
-            const qr2_4 = document.getElementById('qr2_4');
-            const qr2_5 = document.getElementById('qr2_5');
-            const qr2_6 = document.getElementById('qr2_6');
-            qr_text2.value = qr2_1.value + '/' + qr2_2.value + '/' + qr2_3.value + '/' + qr2_4.value + '/' + qr2_5.value + '/' + qr2_6.value;
+            const ft_text2 = document.getElementById('ft_text2');
+            const ft_2_1 = document.getElementById('ft_2_1');
+            const ft_2_2 = document.getElementById('ft_2_2');
+            const ft_2_3 = document.getElementById('ft_2_3');
+            const ft_2_4 = document.getElementById('ft_2_4');
+            const ft_2_5 = document.getElementById('ft_2_5');
+            const ft_2_6 = document.getElementById('ft_2_6');
+            ft_text2.value = ft_2_1.value + '/' + ft_2_2.value + '/' + ft_2_3.value + '/' + ft_2_4.value + '/' + ft_2_5.value + '/' + ft_2_6.value;
         }
         function createQRCodeType3() {
-            const qr_text3 = document.getElementById('qr_text3');
-            const qr3_1 = document.getElementById('qr3_1');
-            const qr3_2 = document.getElementById('qr3_2');
-            const qr3_3 = document.getElementById('qr3_3');
-            const qr3_4 = document.getElementById('qr3_4');
-            const qr3_7 = document.getElementById('qr3_7');
-            const qr3_8 = document.getElementById('qr3_8');
-            const qr3_9 = document.getElementById('qr3_9');
-            const qr3_10 = document.getElementById('qr3_10');
-            const qr3_11 = document.getElementById('qr3_11');
-            const qr3_12 = document.getElementById('qr3_12');
-            const qr3_13 = document.getElementById('qr3_13');
-            const qr3_14 = document.getElementById('qr3_14');
-            const qr3_15 = document.getElementById('qr3_15');
-            const qr3_16 = document.getElementById('qr3_16');
-            const qr3_17 = document.getElementById('qr3_17');
-            const qr3_18 = document.getElementById('qr3_18');
-            const qr3_19 = document.getElementById('qr3_19');
-            const qr3_20 = document.getElementById('qr3_20');
-            const qr3_21 = document.getElementById('qr3_21');
-            qr_text3.value = qr3_1.value + '/' + qr3_2.value + '/' + qr3_3.value + '/' + qr3_4.value + '/' + qr3_7.value + '/' + qr3_8.value + '/' + qr3_9.value + '/' + qr3_10.value + '/' + qr3_11.value + '/' + qr3_12.value + '/' + qr3_13.value + '/' + qr3_14.value + '/' + qr3_15.value + '/' + qr3_16.value + '/' + qr3_17.value + '/' + qr3_18.value + '/' + qr3_19.value + '/' + qr3_20.value + '/' + qr3_21.value;
+            const ft_text3 = document.getElementById('ft_text3');
+            const ft_3_1 = document.getElementById('ft_3_1');
+            const ft_3_2 = document.getElementById('ft_3_2');
+            const ft_3_3 = document.getElementById('ft_3_3');
+            const ft_3_4 = document.getElementById('ft_3_4');
+            const ft_3_7 = document.getElementById('ft_3_7');
+            const ft_3_8 = document.getElementById('ft_3_8');
+            const ft_3_9 = document.getElementById('ft_3_9');
+            const ft_3_10 = document.getElementById('ft_3_10');
+            const ft_3_11 = document.getElementById('ft_3_11');
+            const ft_3_12 = document.getElementById('ft_3_12');
+            const ft_3_13 = document.getElementById('ft_3_13');
+            const ft_3_14 = document.getElementById('ft_3_14');
+            const ft_3_15 = document.getElementById('ft_3_15');
+            const ft_3_16 = document.getElementById('ft_3_16');
+            const ft_3_17 = document.getElementById('ft_3_17');
+            const ft_3_18 = document.getElementById('ft_3_18');
+            const ft_3_19 = document.getElementById('ft_3_19');
+            const ft_3_20 = document.getElementById('ft_3_20');
+            const ft_3_21 = document.getElementById('ft_3_21');
+            ft_text3.value = ft_3_1.value + '/' + ft_3_2.value + '/' + ft_3_3.value + '/' + ft_3_4.value + '/' + ft_3_7.value + '/' + ft_3_8.value + '/' + ft_3_9.value + '/' + ft_3_10.value + '/' + ft_3_11.value + '/' + ft_3_12.value + '/' + ft_3_13.value + '/' + ft_3_14.value + '/' + ft_3_15.value + '/' + ft_3_16.value + '/' + ft_3_17.value + '/' + ft_3_18.value + '/' + ft_3_19.value + '/' + ft_3_20.value + '/' + ft_3_21.value;
         }
 
         // QRコード生成ボタンを押したときの処理を関数で定義
@@ -1361,7 +1487,7 @@
                 createQRCodeType2();
             });
 
-            // create3ボタンを押したときの処理 qr_text3にqr3_1からqr3_21までを'/'で連結して qr_text3に値をセットする
+            // create3ボタンを押したときの処理ft_text3にqr3_1からqr3_21までを'/'で連結してft_text3に値をセットする
             document.getElementById('create_type_3').addEventListener('click', function (e) {
                 createQRCodeType3();
             });
@@ -1434,12 +1560,12 @@
                 const total_page3 = document.getElementById('total_page3').value;
 
                 const writer = new ZXing.BrowserQRCodeSvgWriter();
-                const qr_text2 = document.getElementById('qr_text2').value;
-                const qr_text3 = document.getElementById('qr_text3').value;
+                const ft_text2 = document.getElementById('ft_text2').value;
+                const ft_text3 = document.getElementById('ft_text3').value;
 
                 // utf-8文字列を分割する
-                const qr_text2_array = splitUtf8String(qr_text2, total_page2);
-                const qr_text3_array = splitUtf8String(qr_text3, total_page3);
+                const ft_text2_array = splitUtf8String(ft_text2, total_page2);
+                const ft_text3_array = splitUtf8String(ft_text3, total_page3);
 
                 const hints = new Map();
                 // MARGINの設定
@@ -1451,11 +1577,11 @@
 
 
                 for (let i = 0; i < total_page2; i++) {
-                    const svg = writer.write_sa(i, total_page2, 2, qr_text2_array[i], 128, 128, hints);
+                    const svg = writer.write_sa(i, total_page2, 2, ft_text2_array[i], 128, 128, hints);
                     writeSvg2.appendChild(svg);
                 }
                 for (let i = 0; i < total_page3; i++) {
-                    const svg = writer.write_sa(i, total_page3, 3, qr_text3_array[i], 128, 128, hints);
+                    const svg = writer.write_sa(i, total_page3, 3, ft_text3_array[i], 128, 128, hints);
                     writeSvg3.appendChild(svg);
                 }
 
