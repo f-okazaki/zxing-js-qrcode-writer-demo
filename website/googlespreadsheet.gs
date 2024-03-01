@@ -31,9 +31,9 @@ function getSpreadsheetData(param) {
       if (dataValues[i][0] == "普通自動車") {
         data2.push({
           // 
-          ft_2_2: dataValues[i][2], // 登録番号
-          ft_3_7: dataValues[i][8], // 初度登録年月
-          ft_3_3: dataValues[i][9],//　型式指定番号・類別区分番号
+          ft_2_2: dataValues[i][1], // 登録番号
+          ft_3_7: dataValues[i][2], // 初度登録年月
+          ft_3_3: dataValues[i][3]+dataValues[4],//　型式指定番号・類別区分番号
           ft_text: "【" + dataValues[i][0] + "】" + dataValues[i][2] + "(" + dataValues[i][8] + ")" + dataValues[i][11] + "：" + dataValues[i][12],
         });
       }
